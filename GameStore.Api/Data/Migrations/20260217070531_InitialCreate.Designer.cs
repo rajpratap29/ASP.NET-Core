@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameStore.Api.Data.Migrations
 {
     [DbContext(typeof(GameStoreContext))]
-    [Migration("20260216110226_InitialCreate")]
+    [Migration("20260217070531_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -33,10 +33,10 @@ namespace GameStore.Api.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateOnly>("ReleaseDate")
+                    b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("price")
+                    b.Property<DateOnly>("ReleaseDate")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -58,7 +58,7 @@ namespace GameStore.Api.Data.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Generes");
+                    b.ToTable("Genres");
                 });
 
             modelBuilder.Entity("GameStore.Api.Models.Game", b =>
