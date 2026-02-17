@@ -12,7 +12,7 @@ namespace GameStore.Api.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Generes",
+                name: "Genres",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -21,7 +21,7 @@ namespace GameStore.Api.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Generes", x => x.id);
+                    table.PrimaryKey("PK_Genres", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -32,16 +32,16 @@ namespace GameStore.Api.Data.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
                     GenreId = table.Column<int>(type: "INTEGER", nullable: false),
-                    price = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Price = table.Column<decimal>(type: "TEXT", nullable: false),
                     ReleaseDate = table.Column<DateOnly>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Games", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Games_Generes_GenreId",
+                        name: "FK_Games_Genres_GenreId",
                         column: x => x.GenreId,
-                        principalTable: "Generes",
+                        principalTable: "Genres",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -59,7 +59,7 @@ namespace GameStore.Api.Data.Migrations
                 name: "Games");
 
             migrationBuilder.DropTable(
-                name: "Generes");
+                name: "Genres");
         }
     }
 }

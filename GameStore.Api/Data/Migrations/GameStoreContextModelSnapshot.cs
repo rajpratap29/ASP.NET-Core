@@ -30,10 +30,10 @@ namespace GameStore.Api.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateOnly>("ReleaseDate")
+                    b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("price")
+                    b.Property<DateOnly>("ReleaseDate")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -55,7 +55,7 @@ namespace GameStore.Api.Data.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Generes");
+                    b.ToTable("Genres");
                 });
 
             modelBuilder.Entity("GameStore.Api.Models.Game", b =>
