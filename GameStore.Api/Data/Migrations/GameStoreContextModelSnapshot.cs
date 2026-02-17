@@ -45,7 +45,7 @@ namespace GameStore.Api.Data.Migrations
 
             modelBuilder.Entity("GameStore.Api.Models.Genre", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -53,7 +53,7 @@ namespace GameStore.Api.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Genres");
                 });
