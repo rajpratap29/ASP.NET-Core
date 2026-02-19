@@ -11,6 +11,7 @@ var app = builder.Build();
 app.MapGet("/", () => "Hello from .NET Server!");
 
 app.MapGamesEndpoints();
+app.MapGenresEndpoints();
 
 app.MigrateDb();
 
